@@ -2,6 +2,8 @@
     <string name="app_name">MoCO_Testing</string>
     <string name="tab_text_1">Liste</string>
     <string name="tab_text_2">Hinzufügen</string>
+    <string name="tab_text_3">Setting</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>

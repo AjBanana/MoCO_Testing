@@ -10,14 +10,20 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.moco_testing.ui.main.PkwAdapter
 import com.example.moco_testing.ui.main.SectionsPagerAdapter
+import kotlinx.android.synthetic.main.fragment_list_fragment.*
 
 class MainActivity : AppCompatActivity() {
 
     //Globale variablen
     companion object{var liste = mutableListOf<PKW>(
-        PKW("Auto",12f,"BMW",100)
+            PKW("Auto",12f,"BMW",100),
+            PKW("Auti",12f,"BMW",100)
     )
+        var BenzinPreis = 1.3
     }
 
 
@@ -33,11 +39,17 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+    fun NeuPreis(NeuPreis : Double){
+        BenzinPreis = NeuPreis
+    }
+
+    fun getBenzinPreis(): Double{
+        return BenzinPreis
+    }
+
      //Fügt ein PKW in liste aus PKWS hinzu
      fun addPKW(pkw: PKW) {
-       // test  d("arne", "${liste.size}-1")
          liste.add(pkw)
-       //test  d("arne","${liste.size}-2")
      }
 
     // getfunction um im fragment drauf zuzugreifen

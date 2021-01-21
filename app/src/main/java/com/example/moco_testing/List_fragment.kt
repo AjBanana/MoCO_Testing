@@ -1,12 +1,18 @@
 package com.example.moco_testing
 
 import android.os.Bundle
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.moco_testing.ui.main.PkwAdapter
+import kotlinx.android.synthetic.main.fragment_add__car_fragment.*
 import kotlinx.android.synthetic.main.fragment_list_fragment.*
+import java.lang.Exception
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,7 +28,6 @@ class List_fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,29 +48,53 @@ class List_fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        insertList()
+        // insertList()
+
+        uebergabe()
 
         ButtonRe.setOnClickListener {
-            insertList()
-        }
-
-    }
-
-    // Wir übergeben uns die liste aus Main mit der getFuntion
-    fun insertList(){
-        var liste = MainActivity.liste
-
-        Liste_linearLayout.removeAllViews()
-        liste.forEach{
-            var textview = TextView(this.context)
-            textview.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
-            textview.text = "Name: ${it.name}   PS: ${it.ps}   Hersteller: ${it.hersteller}   Verbrauch: ${it.verbrauch} "
-            Liste_linearLayout.addView(textview)
+            uebergabe()
         }
     }
+
+
+
+
+    fun uebergabe(){
+        PKWrecyclerView.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = PkwAdapter()
+        }
+    }
+    override fun onResume() {
+        super.onResume()
+        PKWrecyclerView.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = PkwAdapter()
+        }
+    }
+
+
+
+
+
+
+
+
+   // Wir übergeben uns die liste aus Main mit der getFuntion
+   //     var liste = MainActivity.liste
+
+   //     liste.forEach{
+   //         var textview = TextView(this.context)
+   //         textview.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+   //         textview.text = "Name: ${it.name}   PS: ${it.ps}   Hersteller: ${it.hersteller}   Verbrauch: ${it.verbrauch} "
+   //         Liste_linearLayout.addView(textview)
+   //     }
+   // }
 
     //muss man nicht beachten
     companion object {
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

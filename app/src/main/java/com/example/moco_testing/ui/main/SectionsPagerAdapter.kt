@@ -1,16 +1,19 @@
 package com.example.moco_testing.ui.main
 
 import android.content.Context
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.moco_testing.Add_Car_fragment
 import com.example.moco_testing.List_fragment
 import com.example.moco_testing.R
+import com.example.moco_testing.SettingFragment
 
 private val TAB_TITLES = arrayOf(
         R.string.tab_text_1,
-        R.string.tab_text_2
+        R.string.tab_text_2,
+        R.string.tab_text_3
 )
 
 /**
@@ -27,7 +30,12 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
         when (position) {
             0 -> fragment = List_fragment()
             1 -> fragment = Add_Car_fragment()
-            //TODO settings
+            2 -> fragment = SettingFragment()
+
+        }
+        if (position == 0){
+            d("Arne","Mongo")
+            fragment.onStart()
         }
         return fragment
     }
@@ -38,6 +46,6 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
 
     override fun getCount(): Int {
         // Show 2 total pages.
-        return 2
+        return 3
     }
 }
