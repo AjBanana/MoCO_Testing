@@ -44,9 +44,11 @@ class Add_Car_fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         buttonSubmit.setOnClickListener {
             val modell = TextFeldModell.text.toString()
-            val hersteller = TextFeldHersteller.text.toString()
-            val Ps = TextFeldPs.text.toString().toInt()
-            val verbrauch = TextFeldVerbrauch.text.toString().toFloat()
+            val hersteller = textFeldHersteller.text.toString()
+            val Ps = textFeldPS.text.toString().toInt()
+            val verbrauch = textFeldVerbauch.text.toString().toFloat()
+
+
 
             val pkw = PKW(modell,verbrauch,hersteller,Ps)
 

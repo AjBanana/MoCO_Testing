@@ -1,20 +1,10 @@
 package com.example.moco_testing
 
 import android.os.Bundle
-import android.util.Log
-import android.util.Log.d
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.moco_testing.ui.main.PkwAdapter
 import com.example.moco_testing.ui.main.SectionsPagerAdapter
-import kotlinx.android.synthetic.main.fragment_list_fragment.*
 
 class MainActivity : AppCompatActivity() {
 

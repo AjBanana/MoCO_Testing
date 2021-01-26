@@ -1,14 +1,10 @@
-package com.example.moco_testing.ui.main
+package com.example.moco_testing
 
-import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moco_testing.MainActivity
-import com.example.moco_testing.R
 import kotlinx.android.synthetic.main.car_row_view.view.*
-import kotlinx.android.synthetic.main.fragment_list_fragment.*
 
 class PkwAdapter : RecyclerView.Adapter<PkwAdapter.ViewHolder>() {
     var liste = MainActivity().getliste()
