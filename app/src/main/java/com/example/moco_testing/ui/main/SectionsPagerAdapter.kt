@@ -34,7 +34,6 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
 
         }
         if (position == 0){
-            d("Arne","Mongo")
             fragment.onStart()
         }
         return fragment

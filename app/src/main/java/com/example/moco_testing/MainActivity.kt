@@ -10,10 +10,10 @@ class MainActivity : AppCompatActivity() {
 
     //Globale variablen
     companion object{var liste = mutableListOf<PKW>(
-            PKW("Auto",12f,"BMW",100),
-            PKW("Auti",12f,"BMW",100)
+           // PKW("Auto",12f,"BMW",100),
+           // PKW("Auti",12f,"BMW",100)
     )
-        var BenzinPreis = 1.3
+        var BenzinPreis: Double = 1.0
     }
 
 
@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
 
     // getfunction um im fragment drauf zuzugreifen
     fun getliste():List<PKW>{
-     //test   d("arne","${liste.size}-3")
         return liste
     }
 

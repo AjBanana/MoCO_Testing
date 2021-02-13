@@ -1,12 +1,10 @@
 package com.example.moco_testing
 
 import android.os.Bundle
-import android.util.Log.d
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.moco_testing.R
 import kotlinx.android.synthetic.main.fragment_setting.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,7 +38,7 @@ class SettingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        button.setOnClickListener  {
+        buttonbenzin.setOnClickListener  {
             val BenzinPreis = BenzinPreisInput.text.toString().toDouble()
             MainActivity().NeuPreis(BenzinPreis)
         }

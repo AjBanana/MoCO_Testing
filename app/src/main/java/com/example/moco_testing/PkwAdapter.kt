@@ -3,8 +3,10 @@ package com.example.moco_testing
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlin.math.round
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.car_row_view.view.*
+import kotlinx.android.synthetic.main.fragment_setting.view.*
 
 class PkwAdapter : RecyclerView.Adapter<PkwAdapter.ViewHolder>() {
     var liste = MainActivity().getliste()
@@ -22,15 +24,17 @@ class PkwAdapter : RecyclerView.Adapter<PkwAdapter.ViewHolder>() {
     holder.itemView.apply {
         row_hersteller.text ="Hersteller: ${liste[position].hersteller}"
         row_name.text= "Name: ${liste[position].name}"
-        row_ps.text= "PS: ${liste[position].ps.toString()}"
-        row_verbrauch.text= "Verbrauch: ${liste[position].verbrauch.toString()} Liter"
+        row_ps.text= "PS: ${liste[position].ps}"
+        row_verbrauch.text= "Verbrauch: ${liste[position].verbrauch} Liter"
         row_image.setImageResource(R.drawable.vwgolf2)
-        var kosten = liste[position].verbrauch
-        kosten = (kosten * MainActivity().getBenzinPreis()).toFloat()
-        VerbrauchKosten.text="Kosten auf 100Km ${kosten.toString()}€"
+
+        val bpreis = MainActivity.BenzinPreis
+        val verbrauch : Double = liste[position].verbrauch.toDouble()
+        VerbrauchKosten.text="Kosten auf 100Km ${(bpreis * verbrauch)}€"
     }
     }
 
     override fun getItemCount() = liste.size
+
 
 }
